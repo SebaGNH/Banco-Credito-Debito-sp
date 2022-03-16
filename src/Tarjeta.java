@@ -15,7 +15,7 @@ public abstract class Tarjeta {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
+    public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
 
@@ -38,10 +38,10 @@ public abstract class Tarjeta {
         return "Nuero de tarjeta: " + numeroDeTarjeta + ", Saldo: " + saldo + ", Titular: " + titular;
     }
     
+     
+    public abstract String extraccion(float importe);
     
-    public abstract float extraccion(float importe);
-    
-    public abstract float deposito(float importe);
+    public abstract String deposito(float importe);
         
     
 }

@@ -21,19 +21,27 @@ public class Credito extends Tarjeta{
     }
     
     //+Depositar(float importe): método que representa el pago de la tarjeta, o sea que disminuye el saldo en base al importe por parametro.
-    public float deposito(float importe){        
-       return super.getSaldo() - importe;
+    @Override
+    public String deposito(float importe){  
+        float saldo = super.getSaldo();
+        saldo -= importe;
+       
+       return "El pago se realizo con exito, su saldo es: "+ saldo;
     }
     
     //+Extraer(float importe): mòntodo que representa una compra con la tarjeta, validar con el lìmite para saber si puede realizar o no la compra.
-    public float extraccion(float importe){ 
+    @Override
+    public String extraccion(float importe){ 
         float saldo = super.getSaldo();
         
-        if(limite >= importe){
+        if(this.limite >= importe){
             saldo +=importe;
-            super.setSaldo(saldo);            
-        }
-        return saldo; 
+            this.limite -= importe;
+            super.setSaldo(saldo);
+
+            return "Operacion realizada con exito, su limite es: "+ this.limite+", su saldo es: "+ saldo;
+        }        
+        return "Limite insuficiente, actualmente tu limite es: "+this.limite;        
     }
     
 }
