@@ -25,6 +25,7 @@ public class Credito extends Tarjeta{
     public String deposito(float importe){  
         float saldo = super.getSaldo();
         saldo -= importe;
+        super.setSaldo(saldo);
        
        return "El pago se realizo con exito, su saldo es: "+ saldo;
     }

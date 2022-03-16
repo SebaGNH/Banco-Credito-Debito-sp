@@ -14,10 +14,42 @@ public class Banco {
     }
     
     //Depositar y extraer importes en base a número y tipo de tarjeta
-    public float depositosExtracciones(){
+    // si es  0 tarjeta Crédito, 1 Débito
+    public String depositar(int tipo, int numeroTarjeta, float importe){
+        String mensaje =  "";
+        if(tipo ==0){
+            for (Tarjeta t : tarjetas) {
+                if(t instanceof Credito && t.getNumeroDeTarjeta() == numeroTarjeta ){
+                    mensaje = t.deposito(importe);
+                }
+            }
+        }else if(tipo == 1){
+            for (Tarjeta t : tarjetas) {
+                if(t instanceof Debito && t.getNumeroDeTarjeta() == numeroTarjeta){
+                    mensaje = t.deposito(importe);
+                }
+            }
+        }
+        return mensaje;
+    }
     
     
-    return 0;
+    public String extraer(int tipo, int numero, float importe){
+        String mensaje = "";
+        if(tipo == 0){
+            for (Tarjeta t : tarjetas) {
+                if(t instanceof Credito && t.getNumeroDeTarjeta() == numero){
+                    t.extraccion(importe);
+                }
+            }
+        }else if(tipo==1){
+            for (Tarjeta t : tarjetas) {
+                if(t instanceof Debito && t.getNumeroDeTarjeta() == numero){
+                    t.extraccion(importe);
+                }
+            }
+        }  
+        return mensaje;
     }
     
     

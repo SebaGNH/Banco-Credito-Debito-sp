@@ -1,14 +1,14 @@
 public abstract class Tarjeta {
-    private int numeroDeTarjeta;
+    private int numeroTarjeta;
     private float saldo;
     private String titular;
 
     public int getNumeroDeTarjeta() {
-        return numeroDeTarjeta;
+        return numeroTarjeta;
     }
 
-    public void setNumeroDeTarjeta(int numeroDeTarjeta) {
-        this.numeroDeTarjeta = numeroDeTarjeta;
+    public void setNumeroDeTarjeta(int numeroTarjeta) {
+        this.numeroTarjeta = numeroTarjeta;
     }
 
     public float getSaldo() {
@@ -27,15 +27,15 @@ public abstract class Tarjeta {
         this.titular = titular;
     }
 
-    public Tarjeta(int numeroDeTarjeta, float saldo, String titular) {
-        this.numeroDeTarjeta = numeroDeTarjeta;
+    public Tarjeta(int numeroTarjeta, float saldo, String titular) {
+        this.numeroTarjeta = numeroTarjeta;
         this.saldo = saldo;
         this.titular = titular;
     }
 
     @Override
     public String toString() {
-        return "Nuero de tarjeta: " + numeroDeTarjeta + ", Saldo: " + saldo + ", Titular: " + titular;
+        return "Nuero de tarjeta: " + numeroTarjeta + ", Saldo: " + saldo + ", Titular: " + titular;
     }
     
      

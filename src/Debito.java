@@ -15,12 +15,11 @@ public abstract class Debito extends Tarjeta {
     public  String deposito(float importe){
         float saldo = super.getSaldo();
         saldo += importe;
+        super.setSaldo(saldo);
     
     return "El deposito se realizo correctamente, su saldo actual es de : "+ saldo;
     
-    }
-    
-    
+    }  
     
     
     //+Extraer(float importe): móntodo que representa una extracción de dinero. 
