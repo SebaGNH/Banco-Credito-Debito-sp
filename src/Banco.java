@@ -53,5 +53,32 @@ public class Banco {
     }
     
     
+    //Mostrar el saldo total de las tarjetas de débito
+    public float getSaldoTotal(){
+        float saldoAcumulador = 0;
+        for (Tarjeta t : tarjetas) {
+            if(t instanceof Debito){
+                saldoAcumulador += t.getSaldo();
+            }
+        }
+        return saldoAcumulador;
+    }
+    
+     //Mostrar el promedio de saldo de las tarjetas de crédito
+    public float getSaldoPromedioCredito(){
+    float saldoAcumulador = 0;
+    int contador = 0;
+        for (Tarjeta t : tarjetas) {
+            if(t instanceof Credito){
+                saldoAcumulador += t.getSaldo();
+                contador ++;
+            }
+        }
+        return saldoAcumulador / contador;   
+    }
+    
+    
+    
+    
     
 }
