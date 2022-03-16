@@ -27,10 +27,10 @@ public class Credito extends Tarjeta{
     
     //+Extraer(float importe): mòntodo que representa una compra con la tarjeta, validar con el lìmite para saber si puede realizar o no la compra.
     public float extraccion(float importe){ 
-        float saldo = 0;
+        float saldo = super.getSaldo();
         
         if(limite >= importe){
-            saldo = super.getSaldo() +importe;
+            saldo +=importe;
             super.setSaldo(saldo);            
         }
         return saldo; 
