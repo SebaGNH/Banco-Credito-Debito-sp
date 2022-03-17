@@ -54,7 +54,7 @@ public class Banco {
     
     
     //Mostrar el saldo total de las tarjetas de débito
-    public float getSaldoTotal(){
+    public float getSaldoTotalDebito(){
         float saldoAcumulador = 0;
         for (Tarjeta t : tarjetas) {
             if(t instanceof Debito){
